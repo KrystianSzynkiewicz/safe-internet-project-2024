@@ -5,10 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="checker-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <script src="script.js" defer></script>
     <style>
         body {
             width: 100%;
             background: black;
+            text-align: center;
         }
 
         #myVideo {
@@ -20,7 +24,8 @@
         }
 
         .content {
-            position: fixed;
+            max-width: 90%;
+            position: absolute;
             z-index: 10;
             color: rgb(0, 255, 34);
         }
@@ -29,18 +34,21 @@
             color: rgb(43, 255, 0);
         }
 
+
+
+        .deactive {
+            display: none;
+        }
+
     </style>
 </head>
 <body>
     
-    <!-- <video autoplay muted loop id="myVideo">
-        <source src="background.mp4" type="video/mp4">
-    </video> -->
     <video autoplay muted id="myVideo">
         <source src="background.mp4" type="video/mp4">
     </video>
 
-    <div class="content">
+    <div class="content deactive" id="content">
         <h1>
             Czy jesteś bezpieczny w sieci?
         </h1>
@@ -48,15 +56,14 @@
             Sprawdź się i odnajdź 5 zasad bezpiecznego internetu w kluczowych mniejscach tej strony
         </h2>
         <h1>
-            1.
+            1. Sprawdź który z linków jest bezpieczniejszy:
         </h1>
-        Sprawdź który z linków jest bezpieczniejszy:
         <br>
         <a class="link" href=""> - Link 1</a>
         <br>
         <a class="link" href=""> - Link 2</a>
         <h1>
-            2.
+            2. Podaj dane:
         </h1>
 
         <form action="">
@@ -71,41 +78,93 @@
             3. Sprawdź czy twoje hasło jest wystarczająco bezpieczne
         </h1>
         
-        <div class="mail">
-            <h2>Input Password and Submit [8 to 15 characters which contain at least one lowercase letter, one uppercase letter, one numeric digit, and one special character]</h2>
-                <form name="form1" action="#">
-                <ul>
-                <li><input type='text' name='text1'/></li>
-                <li class="rq">*Enter numbers only.</li>
-                <li>&nbsp;</li>
-                <li><input type="submit" name="submit" value="Submit" onclick="allnumericplusminus(document.form1.text1)" /></li>
-                <li>&nbsp;</li>
-                </ul>
-                </form>
-        </div>
+        <div class="wrapper">
+            <div class="pass-field">
+              <input type="password" placeholder="Create password">
+              <i class="fa-solid fa-eye"></i>
+            </div>
+            <div class="content">
+              <p>Hasło musi zawierać:</p>
+              <ul class="requirement-list">
+                <li>
+                  <i class="fa-solid fa-circle"></i>
+                  <span>Co najmniej 8 znaków</span>
+                </li>
+                <li>
+                  <i class="fa-solid fa-circle"></i>
+                  <span>Co najmniej 1 numer (0...9)</span>
+                </li>
+                <li>
+                  <i class="fa-solid fa-circle"></i>
+                  <span>Co najmniej 1 mała litera (a...z)</span>
+                </li>
+                <li>
+                  <i class="fa-solid fa-circle"></i>
+                  <span>Co najmniej 1 znak specjalny (!...$)</span>
+                </li>
+                <li>
+                  <i class="fa-solid fa-circle"></i>
+                  <span>Co najmniej 1 wielka litera (A...Z)</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
 
         <h1>
-            4.
+            4. Uważaj na spam i phishing
+            <button id="spambtn">SPAM</button>
+            <button>phishing</button>
         </h1>
         <h1>
-            5.
+            5. Znajdź 5 zasadę i poprawne odpowiedzi znajdziesz w devtools tej strony
         </h1>
-        Znajdź 5 zasadę i poprawne odpowiedzi
+
     </div>
 
 
-    <script type = "text/javascript" src = "//www.deszczowce.pl/licznik/licznik.php?id=124334488"></script>
+    <!-- <script type = "text/javascript" src = "//www.deszczowce.pl/licznik/licznik.php?id=124334488"></script> -->
+
     
     <script>
-    // for (let i=0; i<20; i++) {
-    //     if (i<19) {
-    //     alert("SPAM " + i)
-    //     } else {
-    //     alert("udało ci się odo pierwsza zasada")
-    //     }
-    // }
 
+        const content = document.getElementById('content');
+
+        setTimeout(() => {
+            content.classList.remove('deactive')
+            console.log("Delayed for 1 second.");
+        }, "6000");
+
+        const spambtn = document.getElementById('spambtn');
+
+        const spam = () => {
+            for (let i=0; i<20; i++) {
+            if (i<19) {
+            alert("SPAM " + i)
+            } else {
+            alert("udało ci się odo pierwsza zasada")
+            }
+        }
+        }
+
+        spambtn.addEventListener('click', spam);
+    
     console.log(`Zawsze analizuj sytuację i przemyśl`)
+
     </script>
 </body>
 </html>
