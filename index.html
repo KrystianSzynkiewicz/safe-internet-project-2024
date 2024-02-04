@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            width: 100%;
+            background: black;
+        }
+
+        #myVideo {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        min-width: 100%;
+        min-height: 100%;
+        }
+
+        .content {
+            position: fixed;
+            z-index: 10;
+            color: rgb(0, 255, 34);
+        }
+        .link {
+            text-decoration: none;
+            color: rgb(43, 255, 0);
+        }
+
+    </style>
+</head>
+<body>
+    
+    <!-- <video autoplay muted loop id="myVideo">
+        <source src="background.mp4" type="video/mp4">
+    </video> -->
+    <video autoplay muted id="myVideo">
+        <source src="background.mp4" type="video/mp4">
+    </video>
+
+    <div class="content">
+        <h1>
+            Czy jesteś bezpieczny w sieci?
+        </h1>
+        <h2>
+            Sprawdź się i odnajdź 5 zasad bezpiecznego internetu w kluczowych mniejscach tej strony
+        </h2>
+        <h1>
+            1.
+        </h1>
+        Sprawdź który z linków jest bezpieczniejszy:
+        <br>
+        <a class="link" href=""> - Link 1</a>
+        <br>
+        <a class="link" href=""> - Link 2</a>
+        <h1>
+            2.
+        </h1>
+
+        <form action="">
+        <input type="text" placeholder="Imię">
+        <br>
+        <input type="text" placeholder="Nazwisko">
+        <br>
+        <button>Wyślij</button>
+        </form>
+
+        <h1>
+            3. Sprawdź czy twoje hasło jest wystarczająco bezpieczne
+        </h1>
+        
+        <div class="mail">
+            <h2>Input Password and Submit [8 to 15 characters which contain at least one lowercase letter, one uppercase letter, one numeric digit, and one special character]</h2>
+                <form name="form1" action="#">
+                <ul>
+                <li><input type='text' name='text1'/></li>
+                <li class="rq">*Enter numbers only.</li>
+                <li>&nbsp;</li>
+                <li><input type="submit" name="submit" value="Submit" onclick="allnumericplusminus(document.form1.text1)" /></li>
+                <li>&nbsp;</li>
+                </ul>
+                </form>
+        </div>
+
+        <h1>
+            4.
+        </h1>
+        <h1>
+            5.
+        </h1>
+        Znajdź 5 zasadę i poprawne odpowiedzi
+    </div>
+
+
+    <script type = "text/javascript" src = "//www.deszczowce.pl/licznik/licznik.php?id=124334488"></script>
+    
+    <script>
+    // for (let i=0; i<20; i++) {
+    //     if (i<19) {
+    //     alert("SPAM " + i)
+    //     } else {
+    //     alert("udało ci się odo pierwsza zasada")
+    //     }
+    // }
+
+    console.log(`Zawsze analizuj sytuację i przemyśl`)
+    </script>
+</body>
+</html>
