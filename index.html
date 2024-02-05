@@ -52,31 +52,34 @@
         <h1>
             Czy jesteś bezpieczny w sieci?
         </h1>
-        <h2>
+        <h4>
             Sprawdź się i odnajdź 5 zasad bezpiecznego internetu w kluczowych mniejscach tej strony
-        </h2>
-        <h1>
-            1. Sprawdź który z linków jest bezpieczniejszy:
-        </h1>
+        </h4>
         <br>
-        <a class="link" href=""> - Link 1</a>
+        <h3>
+            1. Sprawdź czy link ma certyfikat SSL, czy taki link jest bezpieczny?:
+        </h3>
+        <a class="link" href="http://srv51580.seohost.com.pl/"> Link </a>
         <br>
-        <a class="link" href=""> - Link 2</a>
-        <h1>
-            2. Podaj dane:
-        </h1>
+        <a class="link" href="https://pomoc.home.pl/baza-wiedzy/certyfikat-ssl-informacje-podstawowe"> Informacje czym jest SSL</a>
+        <br>
+        <br>
+        <h3>
+            2. Twoje dane
+        </h3>
 
         <form action="">
         <input type="text" placeholder="Imię">
         <br>
         <input type="text" placeholder="Nazwisko">
         <br>
-        <button>Wyślij</button>
+        <button id="infosBtn">Wyślij</button>
         </form>
-
-        <h1>
+        <br>
+        <br>
+        <h3>
             3. Sprawdź czy twoje hasło jest wystarczająco bezpieczne
-        </h1>
+        </h3>
         
         <div class="wrapper">
             <div class="pass-field">
@@ -123,16 +126,20 @@
           <br>
           <br>
           <br>
-          <br>
 
-        <h1>
+        <h3>
             4. Uważaj na spam i phishing
+            <br>
             <button id="spambtn">SPAM</button>
-            <button>phishing</button>
-        </h1>
-        <h1>
-            5. Znajdź 5 zasadę i poprawne odpowiedzi znajdziesz w devtools tej strony
-        </h1>
+            <br>
+            <button id="example-btn">Phishing</button>
+
+        </h3>
+        <br>
+        <h3>
+            5. Sprawdź konsolę tej strony i znajdź 5 zasadę.
+        </h3>
+        <br>
 
     </div>
 
@@ -142,28 +149,55 @@
     
     <script>
 
+        var elem = document.querySelector("body");
+        function openFullscreen() {
+        if (elem.requestFullscreen) {
+            elem.requestFullscreen();
+        } else if (elem.webkitRequestFullscreen) { /* Safari */
+            elem.webkitRequestFullscreen();
+        } else if (elem.msRequestFullscreen) { /* IE11 */
+            elem.msRequestFullscreen();
+        }
+        }
+
+        openFullscreen();
+
         const content = document.getElementById('content');
 
         setTimeout(() => {
             content.classList.remove('deactive')
-            console.log("Delayed for 1 second.");
+
         }, "6000");
 
         const spambtn = document.getElementById('spambtn');
 
         const spam = () => {
-            for (let i=0; i<20; i++) {
-            if (i<19) {
+            for (let i=0; i<11; i++) {
+            if (i<10) {
             alert("SPAM " + i)
             } else {
-            alert("udało ci się odo pierwsza zasada")
+            alert("Sprawdź co to jest spam i jak go uniknąć: https://geex.x-kom.pl/lifestyle/co-to-jest-spam/")
             }
         }
         }
 
         spambtn.addEventListener('click', spam);
-    
-    console.log(`Zawsze analizuj sytuację i przemyśl`)
+        
+        const exampleBtn = document.getElementById('example-btn');
+
+        exampleBtn.addEventListener('click', () => {
+        window.open('https://www.gov.pl/web/baza-wiedzy/czym-jest-phishing-i-jak-nie-dac-sie-nabrac-na-podejrzane-widomosci-e-mail-oraz-sms-y', '_blank');
+        });
+
+        const infosBtn = document.getElementById('infosBtn')
+
+        infosBtn.addEventListener('click', () => {
+            alert('nie podawaj danych osobowych')
+        window.open('https://pranx.com/matrix-code-rain/', '_blank');
+        });
+
+
+    console.log(`Zawsze analizuj sytuację i przemyśl, czy strona, aplikacja lub link  `)
 
     </script>
 </body>
